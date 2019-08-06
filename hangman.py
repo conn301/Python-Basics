@@ -1,0 +1,47 @@
+'''
+This program uses lists as the main method for running this hangman game. There are other ways to do this.
+Currently, the word is not taken as user input so others have the ability to guess the word
+'''
+
+word = "money".lower() #if there are any capital letters, the are convert to lowercase
+word_list = list(word) #The word is split into individual characters using a list
+guess_word = list("_" * len(word)) #Creates an empty list with the same length as the word
+no_of_guesses = 10 #Number of guesses the guesser gets
+
+print("**********************")
+print("WELCOME TO HANGMAN! \n")
+guess_a_letter = input("Guess a letter: ").lower()
+
+while no_of_guesses != 1:
+    no_of_guesses -= 1  # Number of guesses is added by 1 each time is goes through the while loop
+
+    for letter in word_list:  #Running through each letter in the word list
+        if letter == guess_a_letter: #Checking for a match between the guess and a letter in the word list
+
+            for num in range(0, len(word)): #Positioning of the lists
+                   if word_list[num] == guess_a_letter: #Checking if the guess matches a letter in a specific position
+                       guess_word[num] = word_list[num] #If the condition is met, this will replace the empty list item with the guessed letter
+                       print(guess_word)
+
+            if guess_word == word_list: #Checks to see that you've your guess_list is the same was the original word list
+                print("*********************************************************")
+                print("WINNER!")
+                print("The word was " + word + "! Thanks for playing!")
+                print("*********************************************************")
+                exit()
+
+    if guess_a_letter not in word_list: #Checking if the guessed letter is in the word
+            print("That letter is not in the word! Please try again!") #Letting the user know that their guess was incorrect
+            print("You have " + str(no_of_guesses) + " guess(es) left!")
+    guess_a_letter = input("Guess a letter: ").lower()
+
+print("YOU LOSE!")
+print("The word was " + "'" + word + "'" + "! Thanks for playing!")
+
+
+
+
+
+
+
+
