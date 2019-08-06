@@ -1,0 +1,62 @@
+'''
+Simple Calculator with Division Error Handling
+@Conn301
+'''
+
+def addition(num1, num2): # Handles the addition of two integers
+
+    try:
+        solution = int(num1) + int(num2)
+        print(solution)
+    except ValueError: # if the user attempts to enter a non-integer as input, an error message will be printed
+        print("Invalid entry!")
+
+def subtraction(num1, num2): # Handles the subtraction of two integers
+
+    try:
+        solution = int(num1) - int(num2)
+        print(solution)
+    except ValueError: # if the user attempts to enter a non-integer as input, an error message will be printed
+        print("Invalid entry!")
+
+def multiplication(num1, num2): # Handles the multiplication of two integers
+
+    try:
+        solution = int(num1) * int(num2)
+        print(solution)
+    except ValueError: # if the user attempts to enter a non-integer as input, an error message will be printed
+        print("Invalid entry!")
+
+def division(num1, num2): # Handles the division of two integers
+    try:
+        solution = int(num1) / int(num2) # num1 and num2 are interpreted as strings so they must be converted to integers
+        remainder = int(num1) % int(num2) # modulus division, getting the remainder
+        solution = int(solution) # converting solution from float type to integer type (if solution results in usage of decimals) ex. 5/3 = 1
+        print("Solution: " + str(solution) + " Remainder: " + str(remainder)) # printing the result
+
+    except ZeroDivisionError: # if the user attempts do division by zero, an error message will be printed
+        print("ERROR: Division by zero.")
+    except ValueError: # if the user attempts to enter a non-integer as input, an error message will be printed
+        print("Invalid entry!")
+
+
+first_number = input("First Number: ") # getting first number from user
+
+second_number = input("Second Number: ") # getting second number from user
+
+print("Addition (A) , Subtraction (S), Multiplication (M), Division (D)") # operation options
+
+operation = input("Operation (A, S, M, D): ").upper() #converts lowercase inputs to uppercase
+
+if operation == "A":
+    addition(first_number, second_number)
+elif operation == "S":
+    subtraction(first_number, second_number)
+elif operation == "M":
+    multiplication(first_number, second_number)
+elif operation == "D":
+    division(first_number, second_number)
+else:
+    print("Invalid option!") # if the user incorrectly chooses an option, message displays
+
+
