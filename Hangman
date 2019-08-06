@@ -13,7 +13,7 @@ print("WELCOME TO HANGMAN! \n")
 guess_a_letter = input("Guess a letter: ").lower()
 
 while no_of_guesses != 1:
-    no_of_guesses -= 1  # Number of guesses is added by 1 each time is goes through the while loop
+    no_of_guesses -= 1  # Number of guesses is subtracted by 1 each time is goes through the while loop
 
     for letter in word_list:  # Running through each letter in the word list
         if letter == guess_a_letter: # Checking for a match between the guess and a letter in the word list
