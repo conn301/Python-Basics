@@ -1,0 +1,85 @@
+'''
+Excercise 1
+Create a program that asks the user to enter their name and their age.
+Print out a message addressed to them that tells them the year that they will turn 100 years old.
+'''
+
+def exercise1():
+    from datetime import datetime # we will use this to get the year
+    currentYear = datetime.now().year # Gets the current year so program does not have to be updated each year using datetime
+
+    name = input("Enter Name: ").title() # putting input in title form so first letter will be capitalized
+    age = input(" Enter Age: ")
+    turning_100 = ((currentYear - int(age) + 100)) # Current Year - Age = Year of Birth -- Add 100 for 100 years after the year of birth
+    print("Hello, " + name + "! You will turn 100 years old in the year " + str(turning_100) + "!") #output
+
+'''
+Exercise 2
+Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
+'''
+
+def exercise2():
+    try:
+
+        num = int(input("Enter a positive number: ")) # Convert numerical input from a string to an integer
+
+        if num % 2 == 0:
+            print("The number " + str(num) + " is even!")
+        else:
+            print("The number " + str(num) +  " is odd!")
+
+    except ValueError: # Will be called if user inputs a non-integer value
+        print("Please enter an integer.")
+
+'''
+Exercise 3
+Write a program that prints out all the elements of the list that are less than 5.
+'''
+
+def exercise3():
+    a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+    for num in a:
+        if num < 5:
+            print(num)
+
+    # [output] for [item] in [list] if [filter] LIST COMPREHENSION
+
+    print([num for num in a if num < 5]) # Output: [1, 1, 2, 3]
+
+
+
+'''
+Exercise 4
+Create a program that asks the user for a number and then prints out a list of all the divisors of that number. 
+(If you don’t know what a divisor is, it is a number that divides evenly into another number. 
+For example, 13 is a divisor of 26 because 26 / 13 has no remainder.)
+
+'''
+
+def exercise4():
+
+    num = int(input("Enter a number: ")) # Input: 21
+    print([div for div in range(1, num + 1) if num % div == 0]) # Output: [1, 3, 7, 21]
+
+
+'''
+Exercise 5
+Write a program that returns a list that contains only the elements that are common between the lists (without duplicates).
+ Make sure your program works on two lists of different sizes.
+'''
+
+def exercise5():
+    a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+    print([item for item in a and b if item in a and b]) # Output: [1, 2, 3, 5, 8, 13]
+
+'''
+Exercise 6
+Ask the user for a string and print out whether this string is a palindrome or not. 
+(A palindrome is a string that reads the same forwards and backwards.)
+'''
+
+def exercise6():
+    string = input("Enter a word or message: ")
