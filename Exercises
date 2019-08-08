@@ -103,4 +103,38 @@ def exercise7():
     print([even for even in a if even % 2 == 0])
 
     print("Even") ; print( "Numbers!") #Did not know until today you could use semi-colons in Python :0 8/7/2019
+ 
+ '''
+Exercise 11
+Ask the user for a number and determine whether the number is prime or not. (For those who have forgotten, a prime number is a number that has no divisors.).
+You can (and should!) use your answer to Exercise 4 to help you. Take this opportunity to practice using functions, described below.
+'''
+
+def exercise11():
+    import sympy
+
+    number = int(input("Enter a number: "))
+    prime = sympy.isprime(number)
+
+    if prime: #if True, print 'Prime'
+        print("Prime")
+    else:
+        print("Not Prime")
+
+def exercise11_1(x):
+    
+    if x > 1:
+        for i in range(2, x):
+            print(i)
+            if x % i == 0: #prime number is only divisible by 1 and itself, when something is divisible by a number greater than one, it's remainder is 0 
+
+                print("Not Prime")
+                return False
+        print("Prime")
+        return True
+
+    print("Not prime")
+    return False
+
+exercise11_1(10)
 
