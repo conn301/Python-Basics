@@ -80,6 +80,15 @@ Exercise 6
 Ask the user for a string and print out whether this string is a palindrome or not. 
 (A palindrome is a string that reads the same forwards and backwards.)
 '''
-
 def exercise6():
     string = input("Enter a word or message: ")
+    string_reverse = string[::-1]
+    print(string_reverse)
+    if string == string_reverse:
+        print(string + " is a palindrome.")
+    else:
+        print(string + " is not a palindrome.")
+
+    # test = "Chris Brown" input: Chris Brown
+    # print(test[0:7:]) output: Chris B
+
