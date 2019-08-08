@@ -138,3 +138,14 @@ def exercise11_1(x):
 
 exercise11_1(10)
 
+'''
+Exercise12
+Write a program that takes a list of numbers (for example, a = [5, 10, 15, 20, 25]) and makes a new list of only the first and last elements of the given list.
+For practice, write this code inside a function.
+'''
+
+
+def exercise12():
+    a = [5, 10, 15, 20, 25, 8]
+    print([item for item in a if a[0] == item or item == a[len(a)-1]]) #Output: [5, 8]
+
