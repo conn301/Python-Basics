@@ -149,3 +149,15 @@ def exercise12():
     a = [5, 10, 15, 20, 25, 8]
     print([item for item in a if a[0] == item or item == a[len(a)-1]]) #Output: [5, 8]
 
+
+def exercise13():
+
+    num_in_sequence = int(input("How many Fibonnaci numbers do you want to see?: "))
+
+    a = [1,1]
+    for n in range(2,num_in_sequence):
+        fib = int(a[n-2]) + int(a[n-1])
+        a.append(fib)
+        print(a)
+
+
