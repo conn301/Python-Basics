@@ -243,3 +243,40 @@ k: An Integer value, it specify the length of a sample.
 Returns: k length new list of elements chosen from the sequence.
 
 '''
+
+'''
+Exercise 17
+Use the BeautifulSoup and requests Python packages to print out a list of all the article titles on the New York Times homepage.
+'''
+import requests
+from bs4 import BeautifulSoup
+
+# html = (requests.get("http://nytimes.com").text)
+# soup = BeautifulSoup(html, "html.parser")
+# print(soup)
+# title = soup.find('title').string
+# print(title)
+
+from bs4 import BeautifulSoup
+import requests
+
+page = requests.get('https://www.nytimes.com/') # Program requests connection to the URL
+cont = page.content # Content of page saved in variable cont
+
+soup = BeautifulSoup(cont, "html.parser") # Beautiful Soup used to format HTML correctly in Python terminal
+print(soup)
+list1 = soup.find_all(class_="esl82me1") # Finds all the items in the HTML that has the specific class
+# print(list1) # [<div class="css-1064d4e esl82me1"><h2 class="css-km70tz esl82me0">Listen to ‘The Daily’</h2></div>...
+
+for i in list1: # runs through items in the list1 variable
+    print(i.text)
+    print(len(list1))
+
+
+# import requests
+# from bs4 import BeautifulSoup
+# url = 'http://github.com'
+# r = requests.get(url)
+# r_html = r.text
+# soup = BeautifulSoup(r_html)
+# print(soup)
