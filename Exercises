@@ -160,4 +160,23 @@ def exercise13():
         a.append(fib)
         print(a)
 
+'''
+Exercise 14
+Write a program (function!) that takes a list and returns a new list that contains all the elements of the first list minus all the duplicates.
+'''
+def exercise14():
+    list1 =  [3, 5, 11, 12, 8, 9, 8, 10, 3]
+    print(set([item for item in list1])) #output: {3, 5, 8, 9, 10, 11, 12}
 
+'''
+Notes on sets:
+Sets are not ordered. This means that there is no “first element” or “last element.” There are just “elements”.
+You cannot ask a set for it’s “next element”.
+There are no repeat elements in sets.
+You can convert between sets and lists very easily.
+ names = set()
+  names.add("Michele")
+  names.add("Robin")
+  names.add("Michele")
+  print(names)
+'''
